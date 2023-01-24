@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    | Welcome
+{% endblock %}
+
+{% block main %}
+    <div class="my-3">
+        <h4>My books</h4>
+        {% if books == [] %}
+            <p><a href="/discover">Click here to start tracking the books you read!</a></p>
+        {% else %}
+            <div class="row d-flex justify-content-start mt-3">
+                {% for book in books %}
+                    <div class="col-auto">
+                        <a href="/book?bookId={{book[0]}}">
+                            <div><img src="./static/bookCovers/{{ book[1] }}.jpg" class="bookCover"></div>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+
+    </div>
+{% endblock %}

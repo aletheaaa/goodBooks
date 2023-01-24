@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    | {{book["bookName"]}}
+{% endblock %}
+
+{% block main %}
+    <div class="mainContent">
+        {% if errorMsg != "" %}
+             <div class="alert alert-danger" role="alert">{{errorMsg}}</div>
+        {% endif %}
+       <div class="row mx-auto mt-4" style="width:60%">
+            <div class="col-4" style="display:flex; justify-content: flex-end; padding-right:20px"><img src="./static/bookCovers/{{ book['bookName'] }}.jpg" class="bookCover"></div>
+            <div class="col-8">
+                <h2 style="font-weight:bold">{{book["bookName"]}}</h2>
+                <h5>By {{book["author"]}}</h5>
+                <p class="mt-4">{{book["description"]}}</p>
+            </div>
+       </div>
+       <form class="row mx-auto mt-5 d-flex justify-content-end" style="width:50%" action="/book?bookId={{book['bookId']}}" method="post">
+            <textarea class="col-12" placeholder="Enter your review here." name="comment"></textarea>
+            <button class="mt-2 btn btn-secondary" style="width:20%;">Add review</button>
+       </form>
+       <div class="row mx-auto mt-4" style="width:50%">
+        <span>Your Comments</span>
+        <hr>
+        {% for comment in user_comments %}
+            <div class="row mt-2">
+                <div class="circle col-1">{{user_email[0]}}</div>
+                <div class="col-10">
+                    <div style="font-size:13px">{{comment['dateTime'].split()[0]}}</div>
+                    <div>{{comment['comment']}}</div>
+                </div>
+            </div>
+        {% endfor %}
+
+        <span class="mt-5">Community Comments</span>
+        <hr>
+        {% if other_comments != [] %}
+            {% for comment in other_comments %}
+                <div class="row mt-2">
+                    <div class="circle col-1">{{comment['email'][0]}}</div>
+                    <div class="col-10">
+                        <div style="font-size:13px">{{comment['dateTime'].split()[0]}}</div>
+                        <div>{{comment['comment']}}</div>
+                    </div>
+                </div>
+            {% endfor %}
+        {% endif %}
+       </div>
+    </div>
+{% endblock %}

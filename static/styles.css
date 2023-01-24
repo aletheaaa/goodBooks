@@ -1,0 +1,112 @@
+a:link{
+    color: black;
+    text-decoration: none;
+ }
+ a:visited {
+    color: black;
+    text-decoration: none;
+}
+ a:hover {
+    text-decoration: underline;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    min-height: 80vh !important;
+    width: 100%;
+}
+
+ /* Size for brand */
+nav .navbar-brand{
+    font-size: xx-large;
+    font-family: "Times New Roman", Times, serif;
+}
+
+/* Colors for brand */
+nav .navbar-brand .light{
+    font-weight: lighter;
+}
+nav .navbar-brand .bold{
+    font-weight: bold;
+}
+
+/* color for the nav bars */
+.nav_bar_color{
+    background-color:#f2e6d6 !important;
+}
+
+/* formatting for bottom nav bar */
+.navbar-bottom{
+    font-size: 20px;
+    font-family: "Georgia", Times, serif;
+    position: sticky;
+}
+.navbar-bottom-header{
+    font-weight: bold;
+}
+
+
+/* formatting for main contents */
+.mainContent{
+    text-align: left;
+    font-size: 16px;
+    height: 100%;
+    width: 100%;
+    min-height: 80vh !important;
+}
+main{
+    font-family: Calibri, Helvetica, sans-serif;
+}
+
+/* formatting for intro page */
+.flex-container{
+    display: flex;
+}
+.flex-child{
+    flex: 1;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+.smallText{
+    align-self: flex-end;
+    font-weight: bold;
+}
+.books{
+    background-color: #DCDCDC;
+}
+.bookCover{
+    height: 300px;
+    width: 200px;
+}
+
+/* formatting for the style page 8*/
+.mx-auto {
+    margin-right: auto!important;
+    margin-left: auto!important;
+}
+
+.w-auto {
+    width: auto!important;
+}
+.form-center {
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+}
+
+/* formatting for error messages */
+.error {
+    text-align: center;
+    background-color: red;
+}
+
+.circle {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #fff;
+    text-align: center;
+    background: #B862FF
+}
