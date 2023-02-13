@@ -7,9 +7,7 @@ It is a web-based application that uses the framework, Flask and the template en
 
 ## Project Setup
 Before running the web-app, install the needed dependencies by running:
-- ` python -m pip install Flask `
-- ` python -m pip install Flask-Session `
-- ` python -m pip install requests `
+- ` python -m pip install -r requirements.txt`
 
 Thereafter, run `flask run` to start the app. 
 The tester account is "elo@gmail.com". The password is "123@s".
